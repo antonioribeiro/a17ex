@@ -1,0 +1,92 @@
+$regular-font-size: 17px;
+$regular-font-line-height: 20px;
+$regular-font-face: 'RobotoRegular';
+
+$regular-heading-font-size: 21px;
+$regular-heading-line-height: 25px;
+$regular-heading-face: 'RobotoSlabBold';
+
+$base-sans-serif: $regular-font-face, 'Arial', 'sans-serif';
+$base-serif: $regular-heading-face, 'New Times Roman', 'serif';
+
+$main-wrapper-width: 1200px;
+$main-content-width: 100%;
+$main-aside-width: 300px;
+
+$button-color: #fff;
+$button-size: 40px;
+$button-share-size: 36px;
+$button-share-border: solid 2px #fff;
+
+$asset-box-bottom-padding: 67.082%;
+$asset-heading-color: #fff;
+$asset-heading-hover-color: #ccc;
+$asset-list-color: #fff;
+$asset-tall-heading-font-size: 30px;
+$asset-tall-heading-line-height: 32px;
+
+$module-footer-header-margin: 10px;
+$module-share-color: #e60b18;
+$module-share-border-color: #e6e6e6;
+$module-heading-font-size: 20px;
+$module-heading-line-height: 22px;
+$module-heading-color: #e60b18;
+$module-heading-border: solid 3px #e60b18;
+$module-footer-list-color: #999;
+$module-title-font-size: 19px;
+$module-title-line-height: 23px;
+$module-title-color: #000;
+$module-title-hover-color: #e60b18;
+$module-box-border: solid 1px #e6e6e6;
+
+$mobile-asset-heading-color: #000;
+$mobile-asset-heading-font-size: 24px;
+$mobile-asset-heading-line-height: 26px;
+$mobile-asset-list-color: #999;
+$mobile-asset-list-font-size: 13px;
+$mobile-asset-list-line-height: 18px;
+$mobile-module-title-font-size: 18px;
+$mobile-module-title-line-height: 22px;
+$mobile-module-button-border: solid 2px #fff;
+
+@mixin generate-font-face($family, $url){
+  @font-face {
+  	font-family: $family;
+  	src: url($url + '.eot');
+  	src: url($url + '.eot?#iefix') format('embedded-opentype'),
+       url($url + '.woff2') format('woff2'),
+  		 url($url + '.woff') format('woff'),
+  		 url($url + '.ttf')  format('truetype'),
+  		 url($url + '.svg#' + $family) format('svg');
+  	font-weight: normal;
+  	font-style: normal;
+  }
+}
+
+@mixin font-size-height($size, $height) {
+  font-size: $size;
+  line-height: $height;
+}
+
+@mixin divide-by-twelve ($number) {
+  width: ($number / 12) * 100%;
+}
+
+@mixin module-footer-header-base {
+  min-height: 40px;
+  position: relative;
+}
+
+@mixin position-element($position,$top, $right, $bottom, $left) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin background-image-cover {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

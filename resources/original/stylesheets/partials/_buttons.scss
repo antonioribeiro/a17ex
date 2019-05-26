@@ -1,0 +1,20 @@
+.button{
+  display: block;
+  width: $button-size;
+  height: $button-size;
+  line-height: $button-size;
+  text-align: center;
+  border-radius: 50%;
+  color: $button-color;
+  @include position-element(absolute, 0, auto, auto, 0);
+  @include background-image-cover;
+  &.share{
+    width: $button-share-size;
+    height: $button-share-size;
+    line-height: $button-share-size;
+    border: $button-share-border;
+    left: auto;
+    right: 0;
+    background: url('../images/share-icon.png') no-repeat center top transparent;
+  }
+}

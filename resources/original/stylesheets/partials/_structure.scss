@@ -1,0 +1,37 @@
+#wrapper{
+  margin: 0 auto;
+  padding: 36px 0;
+  display: table;
+  table-layout: fixed;
+  width: $main-wrapper-width;
+}
+main,
+aside{
+  display: table-cell;
+  vertical-align: top;
+}
+main{
+  padding-right: 40px;
+  width: $main-content-width;
+}
+aside{
+  padding: 3px 0;
+  width: $main-aside-width;
+  .module{
+    margin-top: 40px;
+  }
+}
+.row{
+  margin: 0 -2px;
+}
+.row:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+div[class^="col-"]{
+  float: left;
+}
+.col-6{
+  @include divide-by-twelve(6);
+}

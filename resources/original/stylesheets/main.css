@@ -1,0 +1,477 @@
+@font-face {
+  font-family: "RobotoRegular";
+  src: url("../fonts/roboto/regular/roboto-regular.eot");
+  src: url("../fonts/roboto/regular/roboto-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/regular/roboto-regular.woff2") format("woff2"), url("../fonts/roboto/regular/roboto-regular.woff") format("woff"), url("../fonts/roboto/regular/roboto-regular.ttf") format("truetype"), url("../fonts/roboto/regular/roboto-regular.svg#RobotoRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "RobotoSlabBold";
+  src: url("../fonts/robotoslab/bold/robotoslab-bold.eot");
+  src: url("../fonts/robotoslab/bold/robotoslab-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/robotoslab/bold/robotoslab-bold.woff2") format("woff2"), url("../fonts/robotoslab/bold/robotoslab-bold.woff") format("woff"), url("../fonts/robotoslab/bold/robotoslab-bold.ttf") format("truetype"), url("../fonts/robotoslab/bold/robotoslab-bold.svg#RobotoSlabBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  font-family: "RobotoRegular", "Arial", "sans-serif";
+  font-size: 17px;
+  line-height: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-family: "RobotoSlabBold", "New Times Roman", "serif";
+  font-size: 21px;
+  line-height: 25px;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+#wrapper {
+  margin: 0 auto;
+  padding: 36px 0;
+  display: table;
+  table-layout: fixed;
+  width: 1200px;
+}
+
+main,
+aside {
+  display: table-cell;
+  vertical-align: top;
+}
+
+main {
+  padding-right: 40px;
+  width: 100%;
+}
+
+aside {
+  padding: 3px 0;
+  width: 300px;
+}
+
+aside .module {
+  margin-top: 40px;
+}
+
+.row {
+  margin: 0 -2px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+div[class^="col-"] {
+  float: left;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.ad-block {
+  width: 100%;
+  display: table;
+}
+
+.ad-block > div {
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.button {
+  display: block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 0;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.button.share {
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  border: solid 2px #fff;
+  left: auto;
+  right: 0;
+  background: url("../images/share-icon.png") no-repeat center top transparent;
+}
+
+.asset-box {
+  height: 0;
+  position: relative;
+  padding-bottom: 67.082%;
+}
+
+.asset-box.tall {
+  padding-bottom: 134.164%;
+}
+
+.asset-box.tall h1 {
+  padding-right: 0;
+  font-size: 30px;
+  line-height: 32px;
+}
+
+.asset-box.tall h1 a {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.asset-box.tall footer {
+  display: block;
+}
+
+.asset-box.tall footer ul {
+  padding-right: 50px;
+}
+
+.asset-box h1 {
+  padding-right: 50px;
+  color: #fff;
+}
+
+.asset-box h1 a {
+  color: inherit;
+  transition: all 300ms ease-out;
+}
+
+.asset-box h1 a:hover {
+  color: #ccc;
+}
+
+.asset-box li {
+  color: #fff;
+}
+
+.asset-box header,
+.asset-box footer {
+  min-height: 40px;
+  position: relative;
+}
+
+.asset-box header + footer {
+  margin-top: 10px;
+}
+
+.asset-box footer {
+  display: none;
+}
+
+.asset-box footer ul {
+  padding-left: 50px;
+}
+
+.asset-box:hover footer {
+  display: block;
+}
+
+.asset-image {
+  overflow: hidden;
+  z-index: 1;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+}
+
+.asset-image a {
+  display: block;
+  transition: transform 300ms ease-out;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.asset-image a:hover {
+  transform: scale(1.1);
+}
+
+.asset-content {
+  padding: 20px 20px 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  position: absolute;
+  top: auto;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+}
+
+.module h3 {
+  text-align: center;
+  padding: 20px 0;
+  text-transform: uppercase;
+  color: #e60b18;
+  border-top: solid 3px #e60b18;
+  font-size: 20px;
+  line-height: 22px;
+}
+
+.module h4 {
+  color: #000;
+  transition: color 300ms ease-out;
+  font-size: 19px;
+  line-height: 23px;
+}
+
+.module h4 a {
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  transition: inherit;
+}
+
+.module h4 a:hover {
+  color: #e60b18;
+}
+
+.module h4 + footer {
+  margin-top: 10px;
+}
+
+.module a.image {
+  display: block;
+}
+
+.module footer {
+  min-height: 40px;
+  position: relative;
+}
+
+.module footer ul {
+  padding: 0 50px;
+}
+
+.module footer li {
+  color: #999;
+}
+
+.module .button.share {
+  color: #e60b18;
+  border-color: #e6e6e6;
+  background-position: center bottom;
+}
+
+.module .row {
+  padding: 17px 0;
+  margin: 0;
+  border-top: solid 1px #e6e6e6;
+}
+
+.module div[class^="col-"] {
+  float: none;
+}
+
+.module .col-6 {
+  width: auto;
+}
+
+.module .image-wrap {
+  display: none;
+  position: relative;
+  padding-right: 15px;
+  padding-bottom: 13px;
+}
+
+@media only screen and (max-width: 1200px) {
+  body {
+    padding: 0 10px;
+  }
+  #wrapper {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #wrapper,
+  main,
+  aside {
+    display: block;
+    width: auto;
+  }
+  #wrapper {
+    padding: 16px 0;
+  }
+  main {
+    padding-right: 0;
+  }
+  aside .module {
+    margin-top: 20px;
+  }
+  div[class^="col-"] {
+    float: none;
+  }
+  .col-6 {
+    width: auto;
+  }
+  .asset-box,
+  .asset-box.tall {
+    height: auto;
+    padding-bottom: 0;
+  }
+  .asset-box h1 {
+    padding-right: 0;
+    color: #000;
+    font-size: 24px;
+    line-height: 26px;
+  }
+  .asset-box h1 a {
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+  .asset-box h1 a:hover {
+    color: #e60b18;
+  }
+  .asset-box.tall h1 {
+    font-size: 24px;
+    line-height: 26px;
+  }
+  .asset-box.tall h1 a {
+    font-size: inherit;
+    line-height: inherit;
+  }
+  .asset-box.tall .asset-image a {
+    background-position: top center;
+  }
+  .asset-box footer {
+    display: block;
+  }
+  .asset-box footer ul {
+    padding: 0 50px;
+  }
+  .asset-box header {
+    min-height: auto;
+    position: static;
+  }
+  .asset-box header .button {
+    top: auto;
+    bottom: 30px;
+  }
+  .asset-box li {
+    color: #999;
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .asset-box .button.share {
+    border-color: #e6e6e6;
+    background-position: center bottom;
+  }
+  .asset-content {
+    position: relative;
+    background-color: transparent;
+    padding: 15px 0 30px 0;
+  }
+  .asset-image {
+    height: 0;
+    padding-bottom: 67.082%;
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .module h3 {
+    padding: 15px 0;
+  }
+  .module h4 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .module h4 a {
+    font-size: inherit;
+    line-height: inherit;
+  }
+  .module .row {
+    margin: 0;
+  }
+  .module div[class^="col-"] {
+    float: left;
+  }
+  .module .col-6 {
+    width: 50%;
+  }
+  .module .button {
+    width: 36px;
+    height: 36px;
+    border: solid 2px #fff;
+    position: absolute;
+    top: auto;
+    right: 25px;
+    bottom: 0;
+    left: auto;
+  }
+  .module .button.share {
+    border-color: #e6e6e6;
+  }
+  .module .image-wrap {
+    display: block;
+  }
+  .module footer ul {
+    padding: 0;
+  }
+  .module footer li {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .module footer .button {
+    display: none;
+  }
+}
