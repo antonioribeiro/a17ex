@@ -6,20 +6,8 @@ class ArticleController extends Controller
 {
     protected $moduleName = 'articles';
 
-    protected $defaultIndexOptions = [
-        'create' => true,
-        'edit' => true,
+    protected $indexOptions = [
         'publish' => true,
         'bulkPublish' => true,
-        'feature' => false,
-        'bulkFeature' => false,
-        'restore' => true,
-        'bulkRestore' => true,
-        'delete' => true,
-        'bulkDelete' => true,
-        'reorder' => false,
-        'permalink' => true,
-        'bulkEdit' => true,
-        'editInModal' => true,
     ];
 }

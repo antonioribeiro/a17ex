@@ -4,7 +4,6 @@ namespace App\Models;
 
 use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\Sortable;
-use A17\Twill\Models\Behaviors\HasBlocks;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\HasRevisions;
@@ -12,12 +11,7 @@ use A17\Twill\Models\Behaviors\HasTranslation;
 
 class Article extends Model implements Sortable
 {
-    use HasSlug,
-        HasBlocks,
-        HasMedias,
-        HasPosition,
-        HasRevisions,
-        HasTranslation;
+    use HasSlug, HasMedias, HasPosition, HasRevisions, HasTranslation;
 
     protected $fillable = [
         'published',

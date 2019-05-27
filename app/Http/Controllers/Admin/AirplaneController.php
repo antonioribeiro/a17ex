@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-class AdController extends Controller
+class AirplaneController extends Controller
 {
-    protected $moduleName = 'ads';
+    protected $moduleName = 'airplanes';
 
     protected $indexOptions = [
         'publish' => true,
