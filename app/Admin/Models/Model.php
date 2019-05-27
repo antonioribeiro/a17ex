@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Admin\Models;
 
 use OwenIt\Auditing\Auditable;
 use A17\Twill\Models\Model as A17Model;

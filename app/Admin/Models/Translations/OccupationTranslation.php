@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Translations;
+namespace App\Admin\Models\Translations;
 
 use A17\Twill\Models\Model;
 

@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Admin\Repositories;
 
 use A17\Twill\Repositories\Behaviors\HandleTranslations;
 use A17\Twill\Repositories\ModuleRepository;
-use App\Models\Airplane;
+use App\Admin\Models\Occupation;
 
-class AirplaneRepository extends ModuleRepository
+class OccupationRepository extends ModuleRepository
 {
     use HandleTranslations;
 
-    public function __construct(Airplane $model)
+    public function __construct(Occupation $model)
     {
         $this->model = $model;
     }

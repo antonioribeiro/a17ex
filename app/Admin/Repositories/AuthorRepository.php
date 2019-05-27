@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Admin\Repositories;
 
-use App\Models\Author;
+use App\Admin\Models\Author;
 use A17\Twill\Repositories\ModuleRepository;
 use A17\Twill\Repositories\Behaviors\HandleMedias;
 

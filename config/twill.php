@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'namespace' => 'App\Admin',
+
     'enabled' => [
         'users-management' => true,
         'media-library' => true,

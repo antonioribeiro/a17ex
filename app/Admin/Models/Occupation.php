@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Admin\Models;
 
 use A17\Twill\Models\Behaviors\HasTranslation;
 
