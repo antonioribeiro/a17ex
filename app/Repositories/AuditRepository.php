@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Data\Repositories;
+namespace App\Repositories;
 
-use App\Data\Models\Audit;
+use App\Models\Audit;
 
-class Audits
+class AuditRepository
 {
     public function sweep(): void
     {
