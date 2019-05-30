@@ -1,0 +1,65 @@
+.module{
+  h3{
+    text-align: center;
+    padding: 20px 0;
+    text-transform: uppercase;
+    color: $module-heading-color;
+    border-top: $module-heading-border;
+    @include font-size-height($module-heading-font-size, $module-heading-line-height);
+  }
+  h4{
+    color: $module-title-color;
+    transition: color 300ms ease-out;
+    @include font-size-height($module-title-font-size, $module-title-line-height);
+    a{
+      font-size: inherit;
+      line-height: inherit;
+      color: inherit;
+      transition: inherit;
+      &:hover{
+        color: $module-title-hover-color;
+      }
+    }
+    & + footer{
+      margin-top: $module-footer-header-margin;
+    }
+  }
+  a{
+    &.image{
+      display: block;
+    }
+  }
+  footer{
+    @include module-footer-header-base;
+    ul{
+      padding: 0 50px;
+    }
+    li{
+      color: $module-footer-list-color;
+    }
+  }
+  .button{
+    &.share{
+      color: $module-share-color;
+      border-color: $module-share-border-color;
+      background-position: center bottom;
+    }
+  }
+  .row{
+    padding: 17px 0;
+    margin: 0;
+    border-top: $module-box-border;
+  }
+  div[class^="col-"]{
+    float: none;
+  }
+  .col-6{
+    width: auto;
+  }
+  .image-wrap{
+    display: none;
+    position: relative;
+    padding-right: 15px;
+    padding-bottom: 13px;
+  }
+}

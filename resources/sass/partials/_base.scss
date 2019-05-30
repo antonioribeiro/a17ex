@@ -1,0 +1,35 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  font-family: $base-sans-serif;
+  @include font-size-height($regular-font-size, $regular-font-line-height);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-family: $base-serif;
+  @include font-size-height($regular-heading-font-size, $regular-heading-line-height);
+  a{
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+ul{
+  list-style-type: none;
+}
+img{
+  max-width: 100%;
+}

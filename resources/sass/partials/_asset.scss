@@ -1,0 +1,76 @@
+.asset-box{
+  height: 0;
+  position: relative;
+  padding-bottom: $asset-box-bottom-padding;
+  &.tall{
+    padding-bottom: $asset-box-bottom-padding * 2;
+    h1{
+      padding-right: 0;
+      @include font-size-height($asset-tall-heading-font-size, $asset-tall-heading-line-height);
+      a{
+        font-size: inherit;
+        line-height: inherit;
+      }
+    }
+    footer{
+      display: block;
+      ul{
+        padding-right: 50px;
+      }
+    }
+  }
+  h1{
+    padding-right: 50px;
+    color: $asset-heading-color;
+    a{
+      color: inherit;
+      transition: all 300ms ease-out;
+      &:hover{
+        color: $asset-heading-hover-color;
+      }
+    }
+  }
+  li{
+    color: $asset-list-color;
+  }
+  header,
+  footer{
+    @include module-footer-header-base;
+  }
+  header{
+    & + footer{
+      margin-top: $module-footer-header-margin;
+    }
+  }
+  footer{
+    display: none;
+    ul{
+      padding-left: 50px;
+    }
+  }
+  &:hover{
+    footer{
+      display: block;
+    }
+  }
+}
+.asset-image{
+  overflow: hidden;
+  z-index: 1;
+  @include position-element(absolute, 2px, 2px, 2px, 2px);
+  a{
+    display: block;
+    transition: transform 300ms ease-out;
+    @include position-element(absolute, 0, 0, 0, 0);
+    @include background-image-cover;
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+}
+.asset-content{
+  padding: 20px 20px 15px;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  @include position-element(absolute, auto, 2px, 2px, 2px);
+}
