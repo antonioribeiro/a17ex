@@ -7,8 +7,8 @@
 
         <title>{{ config('app.name') }} :: Front End :: {{ $currentPage }}</title>
 
-        <script src="{{ asset('js/app.js') }}" defer></script>
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <script src="{{ __mix('/site/js/app.js', '/site') }}" defer></script>
+        <link href="{{ __mix('/site/css/app.css', '/site') }}" rel="stylesheet">
     </head>
     <body>
         <div id="wrapper">

@@ -7,6 +7,16 @@
 ## Implement a detail page for news items that includes some sort of “block editor” capabilities to edit the body of the page
 ## Add the ability to translate content
 
+## Presentation
+- Admin / Twill
+- S3/Imgix  
+- Scalability = FaaS / Lambda
+- VueJS+API vs Full Dynamic Content Generation
+- public/site 
+- Larastan
+- Audit
+- The mix() and mix-manifest.json conundrum
+
 ## Description
 
 Hey Luis,
@@ -62,20 +72,18 @@ Translation is something I had some trouble in with Twill and I broke it bad, so
 
 
      
-## Presentation
-- Audit
-- S3/Imgix  
-- Scalability = FaaS / Lambda
-- Larastan
-- VueJS+API vs Full Dynamic Content Generation 
-- Not publishable tables (authors/occupations)
 
 ## TODO
 - Install laravel-responsecache (https://github.com/spatie/laravel-responsecache)
-- Compile assets
-- Login
-- Install Twill
-- Upload images
+- Order articles
+- Featured article
+- Dynamic design
+- Settings (number of posts)
+- CleanUp unused PHP code for site
+X Compile assets
+x Login
+X Install Twill
+X Upload images
 X Schedule an Audit clean
 
 ## ISSUES
@@ -111,10 +119,45 @@ X Schedule an Audit clean
 - Edit image/crop showing no image 
     === Console errors: TypeError: Cannot read property 'medium' of undefined
                         TypeError: Cannot read property 'width' of undefined
- - Presenter, show the user that the presenter class they are try to use does not exists:
+- Presenter: we nedd to show to the user which presenter class does not exists:
     === throw new \Exception('Please set the Presenter path to your Presenter :' . $presenter . ' FQN');
- - Relationship translations
-                                                         
+- Relationship translations
+- Assets compilation for site conflicts with admin, how to keep both in mix-manifest.json?
+    === We can't really use mix for the site because mix-manifest.json will always be rewritten for one or another
+    === https://github.com/area17/twill/issues/252
+    === https://github.com/JeffreyWay/laravel-mix/issues/1759
+- Moving site's mix-manifest.json also did not work
+    === when we add (to webpack.mix.js):
+        global.Mix.manifest.path = function() {
+            return path.join('public/site', this.name)
+        }
+        
+        and change assets dir to:
+         
+        .sass('resources/sass/app.scss', 'public/site/css')
+     
+        this is how it is formed:  
+        {
+            "/site/js/app.js": "/site/js/app.js?id=ef66b6c531ec63f3718a",
+            "/site/css/app.css": "/site/css/app.css?id=7a524dcd6150c54e3d8c"
+        }
+        
+        and this (site/site) is our mix('...') end result url:
+        ---> http://a17-demo.test/site/site/css/app.css?id=7a524dcd6150c54e3d8c
+
+        this is how it should be formed for it to work:
+        {
+            "/site/js/app.js": "/js/app.js?id=ef66b6c531ec63f3718a",
+            "/site/css/app.css": "/css/app.css?id=7a524dcd6150c54e3d8c"
+        }
+
+        because if we do:
+        {{ mix('/site/js/app.js', '/site') }}
+        
+        mix helper will add /site to the 
+- Could not overload mix() helper
+    === https://github.com/laravel/ideas/issues/1569
+                                                                  
 ## DATABASE
 articles
   - title

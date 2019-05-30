@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Data\Models;
+namespace App\Models;
 
 use OwenIt\Auditing\Auditable;
 use Illuminate\Notifications\Notifiable;
