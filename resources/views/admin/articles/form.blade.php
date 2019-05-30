@@ -1,10 +1,12 @@
 @extends('twill::layouts.form')
 
 @section('contentFields')
-    @formField('input', [
-        'name' => 'body',
-        'label' => 'Body',
-        'translated' => true,
-        'maxlength' => 65536
+    @formField('medias',[
+        'name' => 'image',
+        'label' => 'Image',
+    ])
+
+    @formField('block_editor', [
+        'blocks' => ['gallery', 'image_with_text', 'quote', 'paragraph']
     ])
 @stop

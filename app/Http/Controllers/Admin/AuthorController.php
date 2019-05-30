@@ -2,29 +2,43 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Repositories\OccupationRepository;
+
 class AuthorController extends Controller
 {
     protected $moduleName = 'authors';
 
     protected $titleColumnKey = 'name';
 
-    /*
-     * Available columns of the index view
-     */
+    protected $indexWith = ['occupation'];
+
+    protected $formWith = ['occupation'];
+
     protected $indexColumns = [
-        'name' => [
-            'title' => 'Name',
-            'field' => 'name',
-            'sort' => true,
+        'image' => [
+            'thumb' => true,
+            'variant' => [
+                'role' => 'avatar',
+                'crop' => 'default',
+            ],
         ],
 
-        'occupation' => [
-            'title' => 'Occupation',
-            'sort' => true,
-            'relationship' => 'occupation',
-            'field' => 'name',
+        'name' => [
+             'title' => 'Name',
+             'field' => 'name',
         ],
+
+        'occupation' => [ // presenter column
+            'title' => 'Occupation',
+            'field' => 'occupationTitle',
+            'present' => true,
+        ]
     ];
 
-    protected $indexWith = ['occupation'];
+    protected function formData($request)
+    {
+        return [
+            'occupations' => app(OccupationRepository::class)->listAll()
+        ];
+    }
 }

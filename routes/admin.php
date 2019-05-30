@@ -11,5 +11,4 @@ Route::group(['prefix' => 'ads-manager'], function () {
 
 Route::group(['prefix' => 'attributes-manager'], function () {
     Route::module('occupations');
-    Route::module('airplanes');
 });

@@ -9,23 +9,17 @@ class Controller extends ModuleController
     protected $defaultIndexOptions = [
         'create' => true,
         'edit' => true,
+        'publish' => true,
+        'bulkPublish' => true,
+        'feature' => false,
+        'bulkFeature' => false,
         'restore' => true,
         'bulkRestore' => true,
         'delete' => true,
         'bulkDelete' => true,
+        'reorder' => false,
+        'permalink' => false,
         'bulkEdit' => true,
-        'editInModal' => true,
-        //
-        //        'publish' => false,
-        //        'bulkPublish' => false,
-        //        'feature' => false,
-        //        'bulkFeature' => false,
-        //        'reorder' => false,
-        //        'permalink' => false,
-    ];
-
-    protected $indexOptions = [
-        'publish' => false,
-        'bulkPublish' => false,
+        'editInModal' => false,
     ];
 }

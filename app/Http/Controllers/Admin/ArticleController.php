@@ -5,9 +5,5 @@ namespace App\Http\Controllers\Admin;
 class ArticleController extends Controller
 {
     protected $moduleName = 'articles';
-
-    protected $indexOptions = [
-        'publish' => true,
-        'bulkPublish' => true,
-    ];
+    protected $previewView = 'site.articles.show';
 }

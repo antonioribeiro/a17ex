@@ -3,12 +3,13 @@
 @section('contentFields')
     @formField('medias', [
         'name' => 'avatar',
-        'label' => 'Avatar image',
+        'label' => 'Avatar',
     ])
 
-    @formField('browser', [
-        'label' => 'Occupation',
+    @formField('select', [
         'name' => 'occupation_id',
-        'moduleName' => 'occupations'
+        'label' => 'Occupation',
+        'placeholder' => 'Select an occupation',
+        'options' => $occupations
     ])
 @stop

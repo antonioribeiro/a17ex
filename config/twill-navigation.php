@@ -41,11 +41,7 @@ return [
             'occupations' => [
                 'title' => 'Occupations',
                 'module' => true,
-            ],
-            'airplanes' => [
-                'title' => 'Airplanes',
-                'module' => true,
-            ],
+            ]
         ],
     ],
 ];
