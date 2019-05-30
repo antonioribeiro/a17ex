@@ -7,5 +7,4 @@ yarn-error.log
 .phpunit.result.cache
 public/hot
 public/dist
-public/uploads
 public/storage
