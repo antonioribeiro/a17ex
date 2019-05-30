@@ -3,16 +3,7 @@
 use Illuminate\Support\Str;
 
 if (!function_exists('__mix')) {
-    /**
-     * Get the path to a versioned Mix file.
-     *
-     * @param string $path
-     * @param string $manifestDirectory
-     * @return \Illuminate\Support\HtmlString|string
-     *
-     * @throws \Exception
-     */
-    function __mix($path, $manifestDirectory = '')
+    function __mix($path, $manifestDirectory = ''): string
     {
         $path = mix($path, $manifestDirectory);
 
