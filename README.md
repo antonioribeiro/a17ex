@@ -70,9 +70,6 @@ The exercise did not mention it, but it's in the page and something must be done
 Twill also makes our lives very easy in this area, so it should not be a problem to develop. The only matter I see here is that we have no language selector in the design you gave me, so, again, if I add translation to the code we (you guys or me) would have to come up with something, but, of course, we can always start by using the user's browser locale. 
 Translation is something I had some trouble in with Twill and I broke it bad, so bad I had to restart from scratch, this time not touching too many things. I tend to break things, because I don't do things the way some people do, so sometimes I find bugs or I bump into requirements not fit for a particular feature. But I should probably talk to Quentin about this later. I already sent a Pull Request to Twill, fixing some namespacing problems I found while organizing classes my way. 
 
-
-     
-
 ## TODO
 - Install laravel-responsecache (https://github.com/spatie/laravel-responsecache)
 - Order articles
@@ -80,6 +77,11 @@ Translation is something I had some trouble in with Twill and I broke it bad, so
 - Dynamic design
 - Settings (number of posts)
 - CleanUp unused PHP code for site
+- Type hint all the things!
+- Test Exceptions
+- 404 Page design
+- Add statistics to admin
+- Add audit to Admin
 X Compile assets
 x Login
 X Install Twill
