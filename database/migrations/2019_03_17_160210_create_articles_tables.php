@@ -16,6 +16,13 @@ class CreateArticlesTables extends Migration
                 ->nullable();
 
             $table->integer('clicks')->default(0);
+
+            $table->boolean('featured')->default(false);
+
+            $table
+                ->integer('author_id')
+                ->unsigned()
+                ->nullable();
         });
 
         Schema::create('article_translations', function (Blueprint $table) {

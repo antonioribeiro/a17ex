@@ -24,21 +24,22 @@ class AuthorController extends Controller
         ],
 
         'name' => [
-             'title' => 'Name',
-             'field' => 'name',
+            'title' => 'Name',
+            'field' => 'name',
         ],
 
-        'occupation' => [ // presenter column
+        'occupation' => [
+            // presenter column
             'title' => 'Occupation',
             'field' => 'occupationTitle',
             'present' => true,
-        ]
+        ],
     ];
 
     protected function formData($request)
     {
         return [
-            'occupations' => app(OccupationRepository::class)->listAll()
+            'occupations' => app(OccupationRepository::class)->listAll(),
         ];
     }
 }

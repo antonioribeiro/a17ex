@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Repositories\AuthorRepository;
+
 class ArticleController extends Controller
 {
     protected $moduleName = 'articles';
@@ -17,14 +19,34 @@ class ArticleController extends Controller
             ],
         ],
 
+        'featured' => [
+            'title' => 'Featured',
+            'field' => 'featured',
+        ],
+
+        'position' => [
+            'title' => 'Position',
+            'field' => 'position',
+            'sort' => true,
+        ],
+
         'title' => [
             'title' => 'Title',
             'field' => 'title',
+            'sort' => true,
         ],
 
         'clicks' => [
             'title' => 'Clicks',
             'field' => 'clicks',
+            'sort' => true,
         ],
     ];
+
+    protected function formData($request)
+    {
+        return [
+            'authors' => app(AuthorRepository::class)->listAll('name'),
+        ];
+    }
 }

@@ -20,7 +20,9 @@ class Article extends Model implements Sortable
         HasRevisions,
         HasPosition;
 
-    protected $fillable = ['published', 'position'];
+    protected $fillable = ['published', 'position', 'featured'];
+
+    protected $with = ['author'];
 
     public $translatedAttributes = ['title', 'description'];
 
@@ -50,4 +52,9 @@ class Article extends Model implements Sortable
             ],
         ],
     ];
+
+    public function author()
+    {
+        return $this->belongsTo(Author::class);
+    }
 }

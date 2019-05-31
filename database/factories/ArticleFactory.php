@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Author;
 use App\Models\Article;
 use Faker\Generator as Faker;
 use App\Models\Translations\ArticleTranslation;
@@ -8,6 +9,7 @@ $factory->define(Article::class, function (Faker $faker) {
     return [
         'position' => Article::count() + 1,
         'published' => true,
+        'author_id' => Author::all()->random()->id,
     ];
 });
 
