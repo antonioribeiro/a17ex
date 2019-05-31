@@ -8,9 +8,12 @@ class CreateArticlesTables extends Migration
     public function up()
     {
         Schema::create('articles', function (Blueprint $table) {
-
             createDefaultTableFields($table);
 
+            $table
+                ->integer('position')
+                ->unsigned()
+                ->nullable();
         });
 
         Schema::create('article_translations', function (Blueprint $table) {

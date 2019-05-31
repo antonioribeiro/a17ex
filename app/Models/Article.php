@@ -2,34 +2,31 @@
 
 namespace App\Models;
 
-use A17\Twill\Models\Behaviors\HasBlocks;
-use A17\Twill\Models\Behaviors\HasTranslation;
-use A17\Twill\Models\Behaviors\HasSlug;
-use A17\Twill\Models\Behaviors\HasMedias;
-use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Model;
+use A17\Twill\Models\Behaviors\HasSlug;
+use A17\Twill\Models\Behaviors\Sortable;
+use A17\Twill\Models\Behaviors\HasMedias;
+use A17\Twill\Models\Behaviors\HasBlocks;
+use A17\Twill\Models\Behaviors\HasPosition;
+use A17\Twill\Models\Behaviors\HasRevisions;
+use A17\Twill\Models\Behaviors\HasTranslation;
 
-class Article extends Model 
+class Article extends Model implements Sortable
 {
-    use HasBlocks, HasTranslation, HasSlug, HasMedias, HasRevisions;
+    use HasBlocks,
+        HasTranslation,
+        HasSlug,
+        HasMedias,
+        HasRevisions,
+        HasPosition;
 
-    protected $fillable = [
-        'published',
-    ];
+    protected $fillable = ['published', 'position'];
 
+    public $translatedAttributes = ['title', 'description'];
 
-    public $translatedAttributes = [
-        'title',
-        'description',
-    ];
+    public $slugAttributes = ['title'];
 
-    public $slugAttributes = [
-        'title',
-    ];
-
-    public $checkboxes = [
-        'published'
-    ];
+    public $checkboxes = ['published'];
 
     public $mediasParams = [
         'image' => [

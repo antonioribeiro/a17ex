@@ -15,6 +15,7 @@ class CreateOccupationsTables extends Migration
             createDefaultTranslationsTableFields($table, 'occupation');
 
             $table->string('title', 200)->nullable();
+            $table->string('description', 200)->nullable();
         });
     }
 
