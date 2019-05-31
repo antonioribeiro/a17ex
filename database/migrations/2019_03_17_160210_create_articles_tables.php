@@ -14,6 +14,8 @@ class CreateArticlesTables extends Migration
                 ->integer('position')
                 ->unsigned()
                 ->nullable();
+
+            $table->integer('clicks')->default(0);
         });
 
         Schema::create('article_translations', function (Blueprint $table) {

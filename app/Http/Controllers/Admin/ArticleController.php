@@ -21,5 +21,10 @@ class ArticleController extends Controller
             'title' => 'Title',
             'field' => 'title',
         ],
+
+        'clicks' => [
+            'title' => 'Clicks',
+            'field' => 'clicks',
+        ],
     ];
 }
