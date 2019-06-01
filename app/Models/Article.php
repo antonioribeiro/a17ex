@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use A17\Twill\Models\Model;
 use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Behaviors\HasMedias;
@@ -56,5 +55,13 @@ class Article extends Model implements Sortable
     public function author()
     {
         return $this->belongsTo(Author::class);
+    }
+
+    public function getShowUrlAttribute()
+    {
+        return route('news.show', [
+            'section' => 'news',
+            'slug' => $this->getSlug(),
+        ]);
     }
 }

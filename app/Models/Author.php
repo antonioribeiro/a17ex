@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use A17\Twill\Models\Model;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasTranslation;
 use App\Models\Presenters\Author as AuthorPresenter;
