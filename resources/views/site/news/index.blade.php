@@ -7,3 +7,7 @@
 @section('aside')
     @include('site.news.partials.aside')
 @endsection
+
+@section('site-javascript')
+    window.onload = () => observeShareButtons()
+@endsection

@@ -13,7 +13,7 @@
                 <li>{{ $article->author->name }}</li>
                 <li>{{ $article->author->occupation->title }}</li>
             </ul>
-            <a href="#" class="button share"></a>
+            @include('site.news.partials.share', ['article' => $article])
         </footer>
     </div>
 </div>

@@ -1,4 +1,1196 @@
-@import url(/normalize.css/normalize.css);@font-face {
+.jBox-wrapper {
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.jBox-title,
+.jBox-content,
+.jBox-container {
+  position: relative;
+  word-break: break-word;
+  box-sizing: border-box;
+}
+
+.jBox-container {
+  background: #fff;
+}
+
+.jBox-content {
+  padding: 8px 12px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: opacity .2s;
+}
+
+.jBox-footer {
+  box-sizing: border-box;
+}
+
+.jBox-Tooltip .jBox-container,
+.jBox-Mouse .jBox-container {
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+}
+
+.jBox-Tooltip .jBox-title,
+.jBox-Mouse .jBox-title {
+  padding: 8px 10px 0;
+  font-weight: bold;
+}
+
+.jBox-Tooltip.jBox-hasTitle .jBox-content,
+.jBox-Mouse.jBox-hasTitle .jBox-content {
+  padding-top: 5px;
+}
+
+.jBox-Mouse {
+  pointer-events: none;
+}
+
+.jBox-pointer {
+  position: absolute;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.jBox-pointer:after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background: #fff;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  box-sizing: border-box;
+}
+
+.jBox-pointer-top {
+  top: 0;
+}
+
+.jBox-pointer-top:after {
+  left: 5px;
+  top: 6px;
+  box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.jBox-pointer-right {
+  right: 0;
+}
+
+.jBox-pointer-right:after {
+  top: 5px;
+  right: 6px;
+  box-shadow: 1px -1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.jBox-pointer-left {
+  left: 0;
+}
+
+.jBox-pointer-left:after {
+  top: 5px;
+  left: 6px;
+  box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.jBox-pointer-bottom {
+  bottom: 0;
+}
+
+.jBox-pointer-bottom:after {
+  left: 5px;
+  bottom: 6px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.jBox-pointer-top, .jBox-pointer-bottom {
+  width: 30px;
+  height: 12px;
+}
+
+.jBox-pointer-left, .jBox-pointer-right {
+  width: 12px;
+  height: 30px;
+}
+
+.jBox-Modal .jBox-container {
+  border-radius: 4px;
+}
+
+.jBox-Modal .jBox-container, .jBox-Modal.jBox-closeButton-box:before {
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.jBox-Modal .jBox-content {
+  padding: 15px 20px;
+}
+
+.jBox-Modal .jBox-title {
+  border-radius: 4px 4px 0 0;
+  padding: 15px 20px;
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+}
+
+.jBox-Modal.jBox-closeButton-title .jBox-title {
+  padding-right: 65px;
+}
+
+.jBox-Modal .jBox-footer {
+  border-radius: 0 0 4px 4px;
+}
+
+.jBox-closeButton {
+  z-index: 1;
+  cursor: pointer;
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.jBox-closeButton svg {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+}
+
+.jBox-closeButton path {
+  fill: #aaa;
+  transition: fill .2s;
+}
+
+.jBox-closeButton:hover path {
+  fill: #888;
+}
+
+.jBox-overlay .jBox-closeButton {
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.jBox-overlay .jBox-closeButton svg {
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-right: -10px;
+}
+
+.jBox-overlay .jBox-closeButton path {
+  fill: #ddd;
+}
+
+.jBox-overlay .jBox-closeButton:hover path {
+  fill: #fff;
+}
+
+.jBox-closeButton-title .jBox-closeButton {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50px;
+}
+
+.jBox-closeButton-title svg {
+  width: 12px;
+  height: 12px;
+  margin-top: -6px;
+  margin-right: -6px;
+}
+
+.jBox-closeButton-box {
+  box-sizing: border-box;
+}
+
+.jBox-closeButton-box .jBox-closeButton {
+  top: -8px;
+  right: -10px;
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.jBox-closeButton-box .jBox-closeButton svg {
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
+  margin-right: -5px;
+}
+
+.jBox-closeButton-box:before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.jBox-closeButton-box.jBox-pointerPosition-top:before {
+  top: 5px;
+}
+
+.jBox-closeButton-box.jBox-pointerPosition-right:before {
+  right: 2px;
+}
+
+.jBox-Modal.jBox-hasTitle.jBox-closeButton-box .jBox-closeButton {
+  background: #fafafa;
+}
+
+.jBox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.82);
+}
+
+.jBox-footer {
+  background: #fafafa;
+  border-top: 1px solid #eee;
+  padding: 8px 10px;
+  border-radius: 0 0 3px 3px;
+}
+
+body[class^="jBox-blockScroll-"],
+body[class*=" jBox-blockScroll-"] {
+  overflow: hidden;
+}
+
+.jBox-draggable {
+  cursor: move;
+}
+
+@-webkit-keyframes jBoxLoading {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes jBoxLoading {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.jBox-loading .jBox-content {
+  opacity: .2;
+}
+
+.jBox-loading-spinner .jBox-content {
+  min-height: 38px !important;
+  min-width: 38px !important;
+  opacity: 0;
+}
+
+.jBox-spinner {
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-top: -12px;
+  margin-left: -12px;
+}
+
+.jBox-spinner:before {
+  display: block;
+  box-sizing: border-box;
+  content: '';
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-top-color: rgba(0, 0, 0, 0.8);
+  -webkit-animation: jBoxLoading .6s linear infinite;
+          animation: jBoxLoading .6s linear infinite;
+}
+
+.jBox-countdown {
+  border-radius: 4px 4px 0 0;
+  z-index: 0;
+  background: #000;
+  opacity: .2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  overflow: hidden;
+}
+
+.jBox-countdown-inner {
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  background: #fff;
+}
+
+[class^="jBox-animated-"],
+[class*=" jBox-animated-"] {
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes jBox-tada {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  10%,
+  20% {
+    -webkit-transform: scale(0.8) rotate(-4deg);
+            transform: scale(0.8) rotate(-4deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale(1.2) rotate(4deg);
+            transform: scale(1.2) rotate(4deg);
+  }
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale(1.2) rotate(-4deg);
+            transform: scale(1.2) rotate(-4deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+            transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes jBox-tada {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  10%,
+  20% {
+    -webkit-transform: scale(0.8) rotate(-4deg);
+            transform: scale(0.8) rotate(-4deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale(1.2) rotate(4deg);
+            transform: scale(1.2) rotate(4deg);
+  }
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale(1.2) rotate(-4deg);
+            transform: scale(1.2) rotate(-4deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+            transform: scale(1) rotate(0);
+  }
+}
+
+.jBox-animated-tada {
+  -webkit-animation: jBox-tada 1s;
+          animation: jBox-tada 1s;
+}
+
+@-webkit-keyframes jBox-tadaSmall {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  10%,
+  20% {
+    -webkit-transform: scale(0.9) rotate(-2deg);
+            transform: scale(0.9) rotate(-2deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale(1.1) rotate(2deg);
+            transform: scale(1.1) rotate(2deg);
+  }
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale(1.1) rotate(-2deg);
+            transform: scale(1.1) rotate(-2deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+            transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes jBox-tadaSmall {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  10%,
+  20% {
+    -webkit-transform: scale(0.9) rotate(-2deg);
+            transform: scale(0.9) rotate(-2deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale(1.1) rotate(2deg);
+            transform: scale(1.1) rotate(2deg);
+  }
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale(1.1) rotate(-2deg);
+            transform: scale(1.1) rotate(-2deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+            transform: scale(1) rotate(0);
+  }
+}
+
+.jBox-animated-tadaSmall {
+  -webkit-animation: jBox-tadaSmall 1s;
+          animation: jBox-tadaSmall 1s;
+}
+
+@-webkit-keyframes jBox-flash {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+@keyframes jBox-flash {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+.jBox-animated-flash {
+  -webkit-animation: jBox-flash .5s;
+          animation: jBox-flash .5s;
+}
+
+@-webkit-keyframes jBox-shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  20%,
+  60% {
+    -webkit-transform: translateX(-6px);
+            transform: translateX(-6px);
+  }
+  40%,
+  80% {
+    -webkit-transform: translateX(6px);
+            transform: translateX(6px);
+  }
+}
+
+@keyframes jBox-shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  20%,
+  60% {
+    -webkit-transform: translateX(-6px);
+            transform: translateX(-6px);
+  }
+  40%,
+  80% {
+    -webkit-transform: translateX(6px);
+            transform: translateX(6px);
+  }
+}
+
+.jBox-animated-shake {
+  -webkit-animation: jBox-shake .4s;
+          animation: jBox-shake .4s;
+}
+
+@-webkit-keyframes jBox-pulseUp {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes jBox-pulseUp {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.jBox-animated-pulseUp {
+  -webkit-animation: jBox-pulseUp .25s;
+          animation: jBox-pulseUp .25s;
+}
+
+@-webkit-keyframes jBox-pulseDown {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes jBox-pulseDown {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.jBox-animated-pulseDown {
+  -webkit-animation: jBox-pulseDown .25s;
+          animation: jBox-pulseDown .25s;
+}
+
+@-webkit-keyframes jBox-popIn {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes jBox-popIn {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.jBox-animated-popIn {
+  -webkit-animation: jBox-popIn .25s;
+          animation: jBox-popIn .25s;
+}
+
+@-webkit-keyframes jBox-popOut {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes jBox-popOut {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+.jBox-animated-popOut {
+  -webkit-animation: jBox-popOut .25s;
+          animation: jBox-popOut .25s;
+}
+
+@-webkit-keyframes jBox-fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes jBox-fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.jBox-animated-fadeIn {
+  -webkit-animation: jBox-fadeIn .2s;
+          animation: jBox-fadeIn .2s;
+}
+
+@-webkit-keyframes jBox-fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes jBox-fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.jBox-animated-fadeOut {
+  -webkit-animation: jBox-fadeOut .2s;
+          animation: jBox-fadeOut .2s;
+}
+
+@-webkit-keyframes jBox-slideUp {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-300px);
+            transform: translateY(-300px);
+    opacity: 0;
+  }
+}
+
+@keyframes jBox-slideUp {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-300px);
+            transform: translateY(-300px);
+    opacity: 0;
+  }
+}
+
+.jBox-animated-slideUp {
+  -webkit-animation: jBox-slideUp .4s;
+          animation: jBox-slideUp .4s;
+}
+
+@-webkit-keyframes jBox-slideRight {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+    opacity: 0;
+  }
+}
+
+@keyframes jBox-slideRight {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+    opacity: 0;
+  }
+}
+
+.jBox-animated-slideRight {
+  -webkit-animation: jBox-slideRight .4s;
+          animation: jBox-slideRight .4s;
+}
+
+@-webkit-keyframes jBox-slideDown {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(300px);
+            transform: translateY(300px);
+    opacity: 0;
+  }
+}
+
+@keyframes jBox-slideDown {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(300px);
+            transform: translateY(300px);
+    opacity: 0;
+  }
+}
+
+.jBox-animated-slideDown {
+  -webkit-animation: jBox-slideDown .4s;
+          animation: jBox-slideDown .4s;
+}
+
+@-webkit-keyframes jBox-slideLeft {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-300px);
+            transform: translateX(-300px);
+    opacity: 0;
+  }
+}
+
+@keyframes jBox-slideLeft {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-300px);
+            transform: translateX(-300px);
+    opacity: 0;
+  }
+}
+
+.jBox-animated-slideLeft {
+  -webkit-animation: jBox-slideLeft .4s;
+          animation: jBox-slideLeft .4s;
+}
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}
+@font-face {
   font-family: "RobotoRegular";
   src: url(/fonts/roboto-regular.eot?d991a2cb0fac27af34b236dda725a25c);
   src: url(/fonts/roboto-regular.eot?d991a2cb0fac27af34b236dda725a25c) format("embedded-opentype"), url(/fonts/roboto-regular.woff2?2ffa23336c03bb8e36b4b8ab8c6d16a4) format("woff2"), url(/fonts/roboto-regular.woff?8bb733f2565923c90395ab7cde2182a7) format("woff"), url(/fonts/roboto-regular.ttf?ba1f901db7812452d1a3f0555a38ec34) format("truetype"), url(/fonts/roboto-regular.svg?3b02884af4d77377a7dc32cf73bb8d5c) format("svg");

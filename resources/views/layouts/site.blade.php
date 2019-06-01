@@ -9,3 +9,7 @@
         @yield('aside')
     </aside>
 @endsection
+
+@section('JavaScript')
+    @yield('site-javascript')
+@endsection

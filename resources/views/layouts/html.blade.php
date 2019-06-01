@@ -14,5 +14,9 @@
         <div id="wrapper">
             @yield('content')
         </div>
+
+        <script>
+            @yield('JavaScript')
+        </script>
     </body>
 </html>
