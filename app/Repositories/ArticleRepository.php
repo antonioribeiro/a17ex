@@ -51,4 +51,11 @@ class ArticleRepository extends ModuleRepository
             )
             ->chunk(2);
     }
+
+    public function afterSave($object, $fields)
+    {
+        $this->afterSaveHandleSlugs($object, $fields);
+
+        parent::afterSave($object, $fields);
+    }
 }
