@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ceafd98fda7f3f1c05a163d00b8ba3d1",
+    "content-hash": "7a4c0754d90a9f0e3de3ec205d942e26",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -3325,6 +3325,55 @@
                 "spatie"
             ],
             "time": "2019-05-20T08:19:17+00:00"
+        },
+        {
+            "name": "spatie/laravel-varnish",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-varnish.git",
+                "reference": "e1ce45a3784821179080ddb827a181c02dfac2c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-varnish/zipball/e1ce45a3784821179080ddb827a181c02dfac2c5",
+                "reference": "e1ce45a3784821179080ddb827a181c02dfac2c5",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
+                "illuminate/http": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.5.0|~3.6.0|~3.7.0|~3.8.0",
+                "phpunit/phpunit": "^6.3|^7.0|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": ["Spatie\\Varnish\\VarnishServiceProvider"]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Varnish\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": ["MIT"],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Making Varnish and Laravel play nice together",
+            "homepage": "https://github.com/spatie/laravel-varnish",
+            "keywords": ["laravel-varnish", "spatie"],
+            "time": "2019-02-27T13:42:51+00:00"
         },
         {
             "name": "spatie/once",
