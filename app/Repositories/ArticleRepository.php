@@ -23,10 +23,32 @@ class ArticleRepository extends ModuleRepository
         $this->model = $model;
     }
 
-    public function allPublished()
+    public function allForPublishing()
     {
-        return $this->published()
-            ->orderBy('position')
-            ->get();
+        return $this->splitArticlesIntoRowsAndCols(
+            $this->published()
+                ->orderBy('position')
+                ->get()
+        );
+    }
+
+    /**
+     * @param $articles
+     * @param $other
+     * @return \Illuminate\Support\Collection
+     */
+    private function splitArticlesIntoRowsAndCols($articles)
+    {
+        // Featured should be the first
+        $other = $articles->splice(1);
+
+        // Merge featured with all other chunks
+        return collect([collect([$articles->first()])])
+            ->merge(
+                $other->chunk(2)->mapSpread(function ($a, $b) {
+                    return collect([$a, $b]);
+                })
+            )
+            ->chunk(2);
     }
 }

@@ -8,9 +8,8 @@ class Home extends Controller
 {
     public function index()
     {
-        return view('site.home.index')->with(
-            'articles',
-            app(ArticleRepository::class)->allPublished()
-        );
+        return view('site.home.index')->with([
+            'rows' => app(ArticleRepository::class)->allForPublishing(),
+        ]);
     }
 }

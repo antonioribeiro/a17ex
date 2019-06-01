@@ -13,8 +13,9 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
-        "spatie/laravel-responsecache": "^6.0",
-        "owen-it/laravel-auditing": "^9.2"
+        "mnapoli/bref": "^0.3.9",
+        "owen-it/laravel-auditing": "^9.2",
+        "spatie/laravel-responsecache": "^6.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
