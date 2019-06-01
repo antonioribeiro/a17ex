@@ -1,6 +1,10 @@
 <?php
 
 return [
+    'enabled' => [
+        'settings' => true,
+    ],
+
     'block_editor' => [
         'block_single_layout' => 'layouts.block',
         'blocks' => [

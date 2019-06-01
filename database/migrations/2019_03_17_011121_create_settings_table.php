@@ -10,21 +10,31 @@ class CreateSettingsTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->increments('id');
+
             $table->timestamps();
+
             $table->softDeletes();
-            $table->string('key')->nullable()->index();
-            $table->string('section')->nullable()->index();
+
+            $table
+                ->string('key')
+                ->nullable()
+                ->index();
+
+            $table
+                ->string('section')
+                ->nullable()
+                ->index();
+
+            $table->integer('show_posts')->nullable();
         });
 
         Schema::create('setting_translations', function (Blueprint $table) {
             createDefaultTranslationsTableFields($table, 'setting');
-            $table->text('value')->nullable();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('setting_translations');
         Schema::dropIfExists('settings');
     }
 }

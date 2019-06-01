@@ -41,7 +41,22 @@ return [
             'occupations' => [
                 'title' => 'Occupations',
                 'module' => true,
-            ]
+            ],
         ],
     ],
+
+    // ERROR: Could not make this work without translation
+    //
+    //    'settings' => [
+    //        'title' => 'Settings',
+    //        'route' => 'admin.settings',
+    //        'params' => ['section' => 'news'],
+    //        'primary_navigation' => [
+    //            'section_name' => [
+    //                'title' => 'Section name',
+    //                'route' => 'admin.settings',
+    //                'params' => ['section' => 'news'],
+    //            ],
+    //        ],
+    //    ],
 ];

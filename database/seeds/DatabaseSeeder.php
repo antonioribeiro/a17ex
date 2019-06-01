@@ -4,6 +4,7 @@ use App\Models\Ad;
 use App\Models\Article;
 use App\Models\Occupation;
 use A17\Twill\Models\Media;
+use App\Support\Constants;
 use Faker\Generator as Faker;
 use Illuminate\Database\Seeder;
 use App\Models\Author as Author;
@@ -28,8 +29,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'quentin@area17.com',
         ],
     ];
-
-    const LANGUAGES = ['fr', 'en', 'pt', 'es'];
 
     const ARTICLES = [
         [
@@ -56,6 +55,24 @@ class DatabaseSeeder extends Seeder
         [
             'title' => '10 Mid Century Moden Items for Your Home',
             'image' => 'wolverine.jpg',
+        ],
+
+        [
+            'title' =>
+                '3 Questions to Answer Before You Buy Your First Investment',
+            'image' => 'saga.jpg',
+        ],
+        [
+            'title' => 'Pairing Food and Wine',
+            'image' => 'fantastic.jpg',
+        ],
+        [
+            'title' => '12 Questions to Expect on Your College Interview',
+            'image' => 'vulture.jpg',
+        ],
+        [
+            'title' => 'How Not to Look Fat in White Pants',
+            'image' => 'wolverine-face.jpg',
         ],
     ];
 
@@ -187,7 +204,7 @@ class DatabaseSeeder extends Seeder
         collect(static::ARTICLES)->each(function ($article) {
             $model = factory(Article::class)->create();
 
-            collect(static::LANGUAGES)->each(function ($locale) use (
+            collect(Constants::LANGUAGES)->each(function ($locale) use (
                 $model,
                 $article
             ) {
