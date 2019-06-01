@@ -44,11 +44,6 @@ class ArticleRepository extends ModuleRepository
             ->get();
     }
 
-    /**
-     * @param $articles
-     * @param $other
-     * @return \Illuminate\Support\Collection
-     */
     private function splitArticlesIntoRowsAndCols($articles)
     {
         // Featured should be the first
