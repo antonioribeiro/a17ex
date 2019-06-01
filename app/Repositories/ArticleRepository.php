@@ -27,9 +27,21 @@ class ArticleRepository extends ModuleRepository
     {
         return $this->splitArticlesIntoRowsAndCols(
             $this->published()
-                ->orderBy('position')
+                ->orderBy('featured', 'desc')
+                ->orderBy('position', 'asc')
+                ->take(config('news.show.posts'))
                 ->get()
         );
+    }
+
+    public function allTrending()
+    {
+        return $this->published()
+            ->orderBy('clicks', 'asc')
+            ->orderBy('position', 'asc')
+            ->skip(config('news.show.posts'))
+            ->take(config('news.show.trending'))
+            ->get();
     }
 
     /**
