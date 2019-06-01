@@ -5,6 +5,6 @@
         'name' => 'description',
         'label' => 'Description',
         'translated' => true,
-        'maxlength' => 100
+        'maxlength' => 200
     ])
 @stop

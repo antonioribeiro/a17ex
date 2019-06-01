@@ -8,5 +8,6 @@ $factory->define(Ad::class, function (Faker $faker) {
         'title' => null,
         'position' => 1,
         'published' => true,
+        'url' => $faker->url,
     ];
 });

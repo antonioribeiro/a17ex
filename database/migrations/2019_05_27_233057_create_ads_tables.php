@@ -9,10 +9,15 @@ class CreateAdsTables extends Migration
     {
         Schema::create('ads', function (Blueprint $table) {
             createDefaultTableFields($table);
-            
+
             $table->string('title', 200)->nullable();
 
-            $table->integer('position')->unsigned()->nullable();
+            $table->string('url', 200)->nullable();
+
+            $table
+                ->integer('position')
+                ->unsigned()
+                ->nullable();
 
             $table->timestamp('publish_start_date')->nullable();
 

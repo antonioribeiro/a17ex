@@ -169,7 +169,10 @@ class DatabaseSeeder extends Seeder
 
     private function seedAds()
     {
-        $ad = factory(Ad::class)->create(['title' => 'Starbucks']);
+        $ad = factory(Ad::class)->create([
+            'title' => 'Starbucks',
+            'url' => 'https://starbucks.com',
+        ]);
 
         factory(Mediable::class)->create([
             'mediable_id' => $ad->id,

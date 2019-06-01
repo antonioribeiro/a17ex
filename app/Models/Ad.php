@@ -14,6 +14,7 @@ class Ad extends Model implements Sortable
     protected $fillable = [
         'published',
         'title',
+        'url',
         'position',
         'publish_start_date',
         'publish_end_date',

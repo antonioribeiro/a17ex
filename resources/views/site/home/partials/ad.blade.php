@@ -1,5 +1,5 @@
 <div class="ad-block">
     <div>
-        <a href="https://www.starbucks.com/" target="_blank"><img src="images/advert.jpg" /></a>
+        <a href="{{ $ad->url }}" target="_blank"><img src="{{ $ad->image('image') }}" /></a>
     </div>
 </div>

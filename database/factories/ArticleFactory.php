@@ -7,9 +7,10 @@ use App\Models\Translations\ArticleTranslation;
 
 $factory->define(Article::class, function (Faker $faker) {
     return [
-        'position' => Article::count() + 1,
+        'position' => ($position = Article::count() + 1),
         'published' => true,
         'author_id' => Author::all()->random()->id,
+        'featured' => $position === 1,
     ];
 });
 
