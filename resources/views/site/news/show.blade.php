@@ -1,7 +1,7 @@
 @extends('layouts.site')
 
 @section('main')
-    @include('site.news.partials.main')
+    @include('site.news.partials.show')
 @endsection
 
 @section('aside')

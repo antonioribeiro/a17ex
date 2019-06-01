@@ -4,10 +4,10 @@ use App\Models\Ad;
 use App\Models\Article;
 use App\Models\Occupation;
 use A17\Twill\Models\Media;
-use App\Models\Slugs\ArticleSlug;
 use Faker\Generator as Faker;
 use Illuminate\Database\Seeder;
 use App\Models\Author as Author;
+use App\Models\Slugs\ArticleSlug;
 use A17\Twill\Models\User as TwillUser;
 use App\Models\Translations\ArticleTranslation;
 use App\Models\Translations\OccupationTranslation;
@@ -157,7 +157,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->seedUsers();
 
-        $this->seedOcupations();
+        $this->seedOccupations();
 
         $this->seedMedias();
 
@@ -259,7 +259,7 @@ class DatabaseSeeder extends Seeder
         });
     }
 
-    private function seedOcupations()
+    private function seedOccupations()
     {
         foreach (range(1, 5) as $counter) {
             $occupation = factory(Occupation::class)->create();

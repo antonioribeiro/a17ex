@@ -1,2 +1,2 @@
-@include('site.home.partials.ad')
-@include('site.home.partials.trending')
+@include('site.news.partials.ad')
+@include('site.news.partials.trending')
