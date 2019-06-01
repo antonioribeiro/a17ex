@@ -204,7 +204,7 @@ class DatabaseSeeder extends Seeder
         collect(static::ARTICLES)->each(function ($article) {
             $model = factory(Article::class)->create();
 
-            collect(Constants::LANGUAGES)->each(function ($locale) use (
+            collect(Constants::APP_LOCALES)->each(function ($locale) use (
                 $model,
                 $article
             ) {
@@ -281,7 +281,7 @@ class DatabaseSeeder extends Seeder
         foreach (range(1, 5) as $counter) {
             $occupation = factory(Occupation::class)->create();
 
-            collect(static::LANGUAGES)->each(function ($locale) use (
+            collect(Constants::APP_LOCALES)->each(function ($locale) use (
                 $occupation
             ) {
                 factory(OccupationTranslation::class)->create([
