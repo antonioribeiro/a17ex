@@ -18089,7 +18089,7 @@
                         attach: '.share',
                         onOpen: function onOpen() {
                             this.setContent(
-                                $(
+                                jQuery(
                                     '#share-article-' +
                                         this.source.attr('data-id'),
                                 ),
