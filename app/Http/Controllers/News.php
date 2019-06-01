@@ -16,9 +16,10 @@ class News extends Controller
         ]);
     }
 
-    public function show()
+    public function show($slug)
     {
         return view('site.news.show')->with([
+            'article' => app(ArticleRepository::class)->forSlug($slug),
             'trending' => app(ArticleRepository::class)->allTrending(),
             'ad' => app(AdRepository::class)->oneForPublishing(),
         ]);

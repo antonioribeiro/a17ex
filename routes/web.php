@@ -3,5 +3,5 @@
 Route::group(['middleware' => 'varnish'], function () {
     Route::get('/', 'News@index');
 
-    Route::get('/{section}/{slug}', 'News@show')->name('news.show');
+    Route::get('/news/{slug}', 'News@show')->name('news.show');
 });
