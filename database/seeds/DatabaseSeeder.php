@@ -4,6 +4,7 @@ use App\Models\Ad;
 use App\Models\Article;
 use App\Models\Occupation;
 use A17\Twill\Models\Media;
+use App\Models\Slugs\ArticleSlug;
 use Faker\Generator as Faker;
 use Illuminate\Database\Seeder;
 use App\Models\Author as Author;
@@ -196,6 +197,14 @@ class DatabaseSeeder extends Seeder
                     'title' =>
                         $article['title'] . ' (' . strtoupper($locale) . ')',
                 ]);
+
+                factory(ArticleSlug::class)->create([
+                    'article_id' => $model->id,
+                    'locale' => $locale,
+                    'slug' => Str::slug(
+                        $article['title'] . ' (' . strtoupper($locale) . ')'
+                    ),
+                ]);
             });
 
             collect([
@@ -236,7 +245,7 @@ class DatabaseSeeder extends Seeder
                 'mediable_type' => Author::class,
                 'media_id' => Media::where(
                     'filename',
-                    collect(static::IMAGES)->random()['filename']
+                    'sanders.jpg' // collect(static::IMAGES)->random()['filename']
                 )->first()->id,
                 'role' => 'avatar',
             ]);

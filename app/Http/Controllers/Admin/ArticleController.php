@@ -10,6 +10,8 @@ class ArticleController extends Controller
 
     protected $previewView = 'site.articles.show';
 
+    protected $indexOptions = ['permalink' => true];
+
     protected $indexColumns = [
         'image' => [
             'thumb' => true,
