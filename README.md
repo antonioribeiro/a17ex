@@ -10,26 +10,28 @@
 ## Presentation
 - Admin / Twill
 - S3/Imgix  
-- Scalability = FaaS / Lambda
 - VueJS+API vs Full Dynamic Content Generation
 - public/site and the mix() and mix-manifest.json conundrum
-- Maybe add a section to the posts?
-- Larastan
-- Audit
 - Reponse cache clear strategy?
 - Compiling assets to production removes something
 - Share button (need help with design!)
 - Version (meta) and deploy script 
-- Varnish (tested and wasn't as good) 
-- Benchmark - ab -t 10 -c 10 -l https://a17ex.antoniocarlosribeiro.com/
-- Benchmark - ab -t 10 -c 10 -l  - 453 requests - 22ms/req
+- Scalability = FaaS / Lambda (wip) / Varnish (wip)
+- .button => cursor: pointer;
+- Maybe add a section to the posts?
+- Larastan
+- Audit
 
 ## TODO
+- Validation
+- Required data in Twill
+- Author/Article preview in Twill
+- Author Bio
+- Author Page
 - Order articles
 - CleanUp unused PHP code for site
 - Test Exceptions
 - Add audit to Admin
-- Author avatar click
 - Add statistics to admin
 - What is this "image-wrap" on trending? Is this image supposed to be shown at some point?
 X Tests
@@ -102,6 +104,7 @@ Twill also makes our lives very easy in this area, so it should not be a problem
 Translation is something I had some trouble in with Twill and I broke it bad, so bad I had to restart from scratch, this time not touching too many things. I tend to break things, because I don't do things the way some people do, so sometimes I find bugs or I bump into requirements not fit for a particular feature. But I should probably talk to Quentin about this later. I already sent a Pull Request to Twill, fixing some namespacing problems I found while organizing classes my way. 
 
 ## ISSUES
+- Point Github readme to the https://twill.io/ page
 - Add CORS to the docs, to warn people about S3 && JavaScript
 - Add "use Illuminate\Support\Facades\Schema;" to Twill migrations
 - Fix typo "colums"
