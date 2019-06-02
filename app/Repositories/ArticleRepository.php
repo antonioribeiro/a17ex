@@ -26,12 +26,17 @@ class ArticleRepository extends ModuleRepository
     public function allForPublishing()
     {
         return $this->splitArticlesIntoRowsAndCols(
-            $this->published()
-                ->orderBy('featured', 'desc')
-                ->orderBy('position', 'asc')
-                ->take(config('news.show.posts'))
-                ->get()
+            $this->allPublishedArticles()
         );
+    }
+
+    public function allPublishedArticles()
+    {
+        return $this->published()
+            ->orderBy('featured', 'desc')
+            ->orderBy('position', 'asc')
+            ->take(config('news.show.posts'))
+            ->get();
     }
 
     public function allTrending()
