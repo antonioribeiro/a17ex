@@ -19,5 +19,7 @@
         <script>
             @yield('JavaScript')
         </script>
+
+        @include('layouts.partials.analytics')
     </body>
 </html>
