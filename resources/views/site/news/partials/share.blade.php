@@ -1,4 +1,7 @@
-<div class="button share" data-id="{{ $article->id }}"></div>
+<div
+    class="button share"
+    data-id="{{ $article->id }}"
+></div>
 
 <div id="share-article-{{ $article->id }}" style="display: none;">
     <h4>share it!</h4>

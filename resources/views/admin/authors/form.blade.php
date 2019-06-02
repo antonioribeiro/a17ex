@@ -6,6 +6,11 @@
         'label' => 'Avatar',
     ])
 
+    @formField('wysiwyg', [
+        'name' => 'bio',
+        'label' => 'Bio',
+    ])
+
     @formField('select', [
         'name' => 'occupation_id',
         'label' => 'Occupation',

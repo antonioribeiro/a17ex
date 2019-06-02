@@ -14,6 +14,8 @@ class AuthorController extends Controller
 
     protected $formWith = ['occupation'];
 
+    protected $indexOptions = ['permalink' => true];
+
     protected $indexColumns = [
         'image' => [
             'thumb' => true,

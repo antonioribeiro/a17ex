@@ -9,7 +9,7 @@ class CreateAuthorsTables extends Migration
     {
         Schema::create('authors', function (Blueprint $table) {
             createDefaultTableFields($table);
-            
+
             $table->string('name', 200)->nullable();
 
             $table->unsignedBigInteger('occupation_id')->nullable();
@@ -18,13 +18,18 @@ class CreateAuthorsTables extends Migration
         Schema::create('author_translations', function (Blueprint $table) {
             createDefaultTranslationsTableFields($table, 'author');
 
-            $table->text('occupation')->nullable();
+            $table->text('bio')->nullable();
+        });
+
+        Schema::create('author_slugs', function (Blueprint $table) {
+            createDefaultSlugsTableFields($table, 'author');
         });
     }
 
     public function down()
     {
         Schema::dropIfExists('author_translations');
+        Schema::dropIfExists('author_slugs');
         Schema::dropIfExists('authors');
     }
 }

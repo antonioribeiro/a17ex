@@ -4,6 +4,8 @@ use App\Models\Ad;
 use App\Models\Article;
 use App\Models\Occupation;
 use A17\Twill\Models\Media;
+use App\Models\Slugs\AuthorSlug;
+use App\Models\Translations\AuthorTranslation;
 use App\Support\Constants;
 use Faker\Generator as Faker;
 use Illuminate\Database\Seeder;
@@ -247,6 +249,28 @@ class DatabaseSeeder extends Seeder
     {
         $author = factory(Author::class)->create();
 
+        collect(Constants::APP_LOCALES)->each(function ($locale) use ($author) {
+            factory(AuthorTranslation::class)->create([
+                'author_id' => $author->id,
+
+                'locale' => $locale,
+
+                'active' => true,
+
+                'bio' =>
+                    '(' .
+                    strtoupper($locale) .
+                    ') ' .
+                    app(Faker::class)->text(3000),
+            ]);
+
+            factory(AuthorSlug::class)->create([
+                'author_id' => $author->id,
+                'locale' => $locale,
+                'slug' => Str::slug($author->name),
+            ]);
+        });
+
         factory(Mediable::class)->create([
             'mediable_id' => $author->id,
             'mediable_type' => Author::class,
@@ -254,7 +278,7 @@ class DatabaseSeeder extends Seeder
             'role' => 'avatar',
         ]);
 
-        foreach (range(1, 5) as $counter) {
+        foreach (range(1, 10) as $counter) {
             $author = factory(Author::class)->create();
 
             factory(Mediable::class)->create([
