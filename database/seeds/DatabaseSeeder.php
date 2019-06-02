@@ -173,6 +173,15 @@ class DatabaseSeeder extends Seeder
         ],
     ];
 
+    private function makeBlockParagraph($locale)
+    {
+        return sprintf(
+            '{"paragraph":{"%s":"<p>%s</p>"}}',
+            $locale,
+            '(' . strtoupper($locale) . ') ' . app(Faker::class)->text(500)
+        );
+    }
+
     public function run()
     {
         $this->seedUsers();
@@ -229,13 +238,9 @@ class DatabaseSeeder extends Seeder
                 foreach (range(1, rand(2, 8)) as $counter) {
                     factory(Block::class)->create([
                         'blockable_id' => $translation->id,
-                        'blockable_type' => ArticleTranslation::class,
+                        'blockable_type' => Article::class,
                         'position' => $counter,
-                        'content' =>
-                            '(' .
-                            strtoupper($locale) .
-                            ') ' .
-                            app(Faker::class)->text(500),
+                        'content' => $this->makeBlockParagraph($locale),
                         'type' => 'paragraph',
                     ]);
                 }
