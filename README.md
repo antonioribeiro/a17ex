@@ -12,10 +12,41 @@
 - S3/Imgix  
 - Scalability = FaaS / Lambda
 - VueJS+API vs Full Dynamic Content Generation
-- public/site 
+- public/site and the mix() and mix-manifest.json conundrum
+- Maybe add a section to the posts?
 - Larastan
 - Audit
-- The mix() and mix-manifest.json conundrum
+- Reponse cache clear strategy?
+- Compiling assets to production removes something
+- Share button (need help with design!)
+- Version (meta) and deploy script 
+- Varnish (tested and wasn't as good) 
+- Benchmark - ab -t 10 -c 10 -l https://a17ex.antoniocarlosribeiro.com/
+- Benchmark - ab -t 10 -c 10 -l  - 453 requests - 22ms/req
+
+## TODO
+- Order articles
+- CleanUp unused PHP code for site
+- Test Exceptions
+- Add audit to Admin
+- Author avatar click
+- Add statistics to admin
+- What is this "image-wrap" on trending? Is this image supposed to be shown at some point?
+X Tests
+X Share button
+X HTTPS
+X Settings (number of posts) - broken
+X Dynamic design
+X Install laravel-responsecache (https://github.com/spatie/laravel-responsecache)
+X 404 Page design
+X Add Varnish
+X Featured article
+X Compile assets
+x Login
+X Install Twill
+X Upload images
+X Schedule an Audit clean
+
 
 ## Description
 
@@ -69,24 +100,6 @@ The exercise did not mention it, but it's in the page and something must be done
 - Translation
 Twill also makes our lives very easy in this area, so it should not be a problem to develop. The only matter I see here is that we have no language selector in the design you gave me, so, again, if I add translation to the code we (you guys or me) would have to come up with something, but, of course, we can always start by using the user's browser locale. 
 Translation is something I had some trouble in with Twill and I broke it bad, so bad I had to restart from scratch, this time not touching too many things. I tend to break things, because I don't do things the way some people do, so sometimes I find bugs or I bump into requirements not fit for a particular feature. But I should probably talk to Quentin about this later. I already sent a Pull Request to Twill, fixing some namespacing problems I found while organizing classes my way. 
-
-## TODO
-- Install laravel-responsecache (https://github.com/spatie/laravel-responsecache)
-- Order articles
-- Featured article
-- Dynamic design
-- Settings (number of posts)
-- CleanUp unused PHP code for site
-- Type hint all the things!
-- Test Exceptions
-- 404 Page design
-- Add statistics to admin
-- Add audit to Admin
-X Compile assets
-x Login
-X Install Twill
-X Upload images
-X Schedule an Audit clean
 
 ## ISSUES
 - Add CORS to the docs, to warn people about S3 && JavaScript
@@ -159,7 +172,14 @@ X Schedule an Audit clean
         mix helper will add /site to the 
 - Could not overload mix() helper
     === https://github.com/laravel/ideas/issues/1569
-                                                                  
+- Setting the featured field as the first one in table gives the error "Undefined index: field"
+- Article 1 doesn't stick with all languages in 'live'
+- Would be nice if select could be changed to a Select2
+- If a relation is in $translatedAttributes, the getter will return null
+- A missing "public $translatedAttributes = [];" gave the error Undefined property: App\Models\Author::$translatedAttributes                                                                  
+- When changing the title, slugs weren't updated, calling afterSaveHandleSlugs() did not help, was it supposed to? 
+- How to disable settings translation for one particular setting? It keeps trying to save it translated 
+
 ## DATABASE
 articles
   - title
@@ -215,3 +235,42 @@ ads
         <AllowedHeader>*</AllowedHeader>
     </CORSRule>
 </CORSConfiguration>
+
+
+# FaaS
+## AWS CLI
+pip3 install awscli --upgrade --user
+ 
+## AWS SAM CLI
+brew tap aws/tap
+brew install aws-sam-cli
+
+## Create App
+laravel new serverless-app
+
+## Install Bref
+composer require mnapoli/bref
+
+## create template.yml and configure app
+https://bref.sh/docs/frameworks/laravel.html
+
+## create a bucket (mb = make bucket)
+aws s3 mb s3://my-bucket
+
+## remove dev packages
+composer install --optimize-autoloader --no-dev
+
+## generate the stack configuration
+sam package \
+    --output-template-file .stack.yaml \
+    --s3-bucket my-bucket
+
+## deploy
+    aws cloudformation deploy / 
+        --template-file /Users/antoniocarlosribeiro/code/area17/faas/.stack.yaml 
+        --stack-name area17-faas
+
+sam deploy \
+    --template-file .stack.yaml \
+    --capabilities CAPABILITY_IAM \
+    --stack-name area17
