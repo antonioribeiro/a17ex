@@ -247,39 +247,32 @@ class DatabaseSeeder extends Seeder
 
     private function seedAuthors()
     {
-        $author = factory(Author::class)->create();
-
-        collect(Constants::APP_LOCALES)->each(function ($locale) use ($author) {
-            factory(AuthorTranslation::class)->create([
-                'author_id' => $author->id,
-
-                'locale' => $locale,
-
-                'active' => true,
-
-                'bio' =>
-                    '(' .
-                    strtoupper($locale) .
-                    ') ' .
-                    app(Faker::class)->text(3000),
-            ]);
-
-            factory(AuthorSlug::class)->create([
-                'author_id' => $author->id,
-                'locale' => $locale,
-                'slug' => Str::slug($author->name),
-            ]);
-        });
-
-        factory(Mediable::class)->create([
-            'mediable_id' => $author->id,
-            'mediable_type' => Author::class,
-            'media_id' => Media::where('filename', 'sanders.jpg')->first()->id,
-            'role' => 'avatar',
-        ]);
-
         foreach (range(1, 10) as $counter) {
             $author = factory(Author::class)->create();
+
+            collect(Constants::APP_LOCALES)->each(function ($locale) use (
+                $author
+            ) {
+                factory(AuthorTranslation::class)->create([
+                    'author_id' => $author->id,
+
+                    'locale' => $locale,
+
+                    'active' => true,
+
+                    'bio' =>
+                        '(' .
+                        strtoupper($locale) .
+                        ') ' .
+                        app(Faker::class)->text(3000),
+                ]);
+
+                factory(AuthorSlug::class)->create([
+                    'author_id' => $author->id,
+                    'locale' => $locale,
+                    'slug' => Str::slug($author->name),
+                ]);
+            });
 
             factory(Mediable::class)->create([
                 'mediable_id' => $author->id,

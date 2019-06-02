@@ -1,6 +1,7 @@
 <div
     class="button share"
     data-id="{{ $article->id }}"
+    title="Share it!"
 ></div>
 
 <div id="share-article-{{ $article->id }}" style="display: none;">

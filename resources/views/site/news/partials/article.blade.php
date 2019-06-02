@@ -12,12 +12,7 @@
             <h1><a href="{{ $article->showUrl }}">{{ $article->title }}</a></h1>
         </header>
         <footer>
-            <a href="#" class="button" style="background-image: url({{ $article->author->image('avatar') }})"></a>
-
-            <ul>
-                <li>{{ $article->author->name }}</li>
-                <li>{{ $article->author->occupation->title }}</li>
-            </ul>
+            @include('site.news.partials.author-button', ['author' => $article->author])
 
             @include('site.news.partials.share', ['article' => $article])
         </footer>

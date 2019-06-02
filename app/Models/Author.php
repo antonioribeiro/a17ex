@@ -36,4 +36,16 @@ class Author extends Model
     {
         return $this->belongsTo(Occupation::class);
     }
+
+    public function getShowUrlAttribute()
+    {
+        return route('authors.show', [
+            'slug' => $this->getSlug(),
+        ]);
+    }
+
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
 }
