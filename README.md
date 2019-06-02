@@ -12,7 +12,7 @@
 - S3/Imgix  
 - VueJS+API vs Full Dynamic Content Generation
 - public/site and the mix() and mix-manifest.json conundrum
-- Reponse cache clear strategy?
+- Response cache and clear strategy
 - Compiling assets to production removes something
 - Share button (need help with design!)
 - Version (meta) and deploy script 
@@ -23,17 +23,19 @@
 - Audit
 
 ## TODO
-- Validation
+- Validation / Configure Requests
 - Required data in Twill
 - Author/Article preview in Twill
-- Author Bio
-- Author Page
 - Order articles
 - CleanUp unused PHP code for site
 - Test Exceptions
 - Add audit to Admin
-- Add statistics to admin
 - What is this "image-wrap" on trending? Is this image supposed to be shown at some point?
+- Add some blocks to article seeding
+- Add a favicon
+X Enable Google Analytics Stats
+X Author Bio
+X Author Page
 X Tests
 X Share button
 X HTTPS
