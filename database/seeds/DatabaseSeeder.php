@@ -175,11 +175,19 @@ class DatabaseSeeder extends Seeder
 
     private function makeBlockParagraph($locale)
     {
-        return sprintf(
-            '{"paragraph":{"%s":"<p>%s</p>"}}',
-            $locale,
-            '(' . strtoupper($locale) . ') ' . app(Faker::class)->text(500)
-        );
+        return [
+            'paragraph' => collect(Constants::APP_LOCALES)
+                ->mapWithKeys(function ($locale) {
+                    return [
+                        $locale => sprintf(
+                            '<p>(%s) %s</p>',
+                            strtoupper($locale),
+                            app(Faker::class)->text(rand(200, 700))
+                        ),
+                    ];
+                })
+                ->toArray(),
+        ];
     }
 
     public function run()
