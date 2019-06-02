@@ -15,8 +15,6 @@ class CreateArticlesTables extends Migration
                 ->unsigned()
                 ->nullable();
 
-            $table->integer('clicks')->default(0);
-
             $table->boolean('featured')->default(false);
 
             $table

@@ -42,7 +42,6 @@ class ArticleRepository extends ModuleRepository
     public function allTrending()
     {
         return $this->published()
-            ->orderBy('clicks', 'asc')
             ->orderBy('position', 'asc')
             ->skip(config('news.show.posts'))
             ->take(config('news.show.trending'))

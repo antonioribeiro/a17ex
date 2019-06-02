@@ -37,12 +37,6 @@ class ArticleController extends Controller
             'field' => 'title',
             'sort' => true,
         ],
-
-        'clicks' => [
-            'title' => 'Clicks',
-            'field' => 'clicks',
-            'sort' => true,
-        ],
     ];
 
     protected function formData($request)

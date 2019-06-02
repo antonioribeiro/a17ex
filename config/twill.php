@@ -5,6 +5,15 @@ return [
         'settings' => true,
     ],
 
+    'dashboard' => [
+        'analytics' => [
+            'enabled' => true,
+            'service_account_credentials_json' => storage_path(
+                'app/analytics/service-account-credentials.json'
+            ),
+        ],
+    ],
+
     'block_editor' => [
         'block_single_layout' => 'layouts.block',
         'blocks' => [
