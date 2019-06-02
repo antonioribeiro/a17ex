@@ -1,5 +1,6 @@
 <?php
 
+use A17\Twill\Models\Block;
 use App\Models\Ad;
 use App\Models\Article;
 use App\Models\Occupation;
@@ -210,7 +211,7 @@ class DatabaseSeeder extends Seeder
                 $model,
                 $article
             ) {
-                factory(ArticleTranslation::class)->create([
+                $translation = factory(ArticleTranslation::class)->create([
                     'article_id' => $model->id,
                     'locale' => $locale,
                     'title' =>
@@ -224,6 +225,20 @@ class DatabaseSeeder extends Seeder
                         $article['title'] . ' (' . strtoupper($locale) . ')'
                     ),
                 ]);
+
+                foreach (range(1, rand(2, 8)) as $counter) {
+                    factory(Block::class)->create([
+                        'blockable_id' => $translation->id,
+                        'blockable_type' => ArticleTranslation::class,
+                        'position' => $counter,
+                        'content' =>
+                            '(' .
+                            strtoupper($locale) .
+                            ') ' .
+                            app(Faker::class)->text(500),
+                        'type' => 'paragraph',
+                    ]);
+                }
             });
 
             collect([
