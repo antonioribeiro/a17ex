@@ -38,7 +38,7 @@ class AuthorController extends Controller
         ],
     ];
 
-    protected function formData($request)
+    protected function formData($request): array
     {
         return [
             'occupations' => app(OccupationRepository::class)->listAll(),

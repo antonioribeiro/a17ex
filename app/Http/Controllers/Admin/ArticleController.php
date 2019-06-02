@@ -39,7 +39,7 @@ class ArticleController extends Controller
         ],
     ];
 
-    protected function formData($request)
+    protected function formData($request): array
     {
         return [
             'authors' => app(AuthorRepository::class)->listAll('name'),

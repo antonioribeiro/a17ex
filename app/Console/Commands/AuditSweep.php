@@ -34,9 +34,9 @@ class AuditSweep extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return void
      */
-    public function handle()
+    public function handle(): void
     {
         $this->info('Sweeping audits table...');
 
