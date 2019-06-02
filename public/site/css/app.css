@@ -1327,6 +1327,7 @@ div[class^=col-] {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .button.share {
