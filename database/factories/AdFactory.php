@@ -1,13 +1,12 @@
 <?php
 
 use App\Models\Ad;
-use Faker\Generator as Faker;
 
-$factory->define(Ad::class, function (Faker $faker) {
+$factory->define(Ad::class, function () {
     return [
         'title' => null,
         'position' => 1,
         'published' => true,
-        'url' => $faker->url,
+        'url' => faker()->url,
     ];
 });

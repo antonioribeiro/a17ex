@@ -12,3 +12,21 @@ if (!function_exists('__mix')) {
             : $path;
     }
 }
+
+if (!function_exists('faker')) {
+    /**
+     * @param null $locale
+     * @return \Faker\Generator
+     */
+    function faker($locale = null)
+    {
+        return Faker\Factory::create(
+            [
+                'en' => 'en_US',
+                'es' => 'es_AR',
+                'fr' => 'fr_FR',
+                'pt' => 'pt_BR',
+            ][$locale ?? config('app.locale')]
+        );
+    }
+}

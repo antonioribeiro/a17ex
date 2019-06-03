@@ -1,18 +1,17 @@
 <?php
 
-use A17\Twill\Models\Block;
 use App\Models\Ad;
 use App\Models\Article;
-use App\Models\Occupation;
-use A17\Twill\Models\Media;
-use App\Models\Slugs\AuthorSlug;
-use App\Models\Translations\AuthorTranslation;
 use App\Support\Constants;
-use Faker\Generator as Faker;
+use App\Models\Occupation;
+use A17\Twill\Models\Block;
+use A17\Twill\Models\Media;
 use Illuminate\Database\Seeder;
 use App\Models\Author as Author;
+use App\Models\Slugs\AuthorSlug;
 use App\Models\Slugs\ArticleSlug;
 use A17\Twill\Models\User as TwillUser;
+use App\Models\Translations\AuthorTranslation;
 use App\Models\Translations\ArticleTranslation;
 use App\Models\Translations\OccupationTranslation;
 
@@ -182,7 +181,7 @@ class DatabaseSeeder extends Seeder
                         $locale => sprintf(
                             '<p>(%s) %s</p>',
                             strtoupper($locale),
-                            app(Faker::class)->text(rand(200, 700))
+                            faker($locale)->text(rand(200, 700))
                         ),
                     ];
                 })
@@ -292,7 +291,7 @@ class DatabaseSeeder extends Seeder
                         '(' .
                         strtoupper($locale) .
                         ') ' .
-                        app(Faker::class)->text(3000),
+                        faker($locale)->text(3000),
                 ]);
 
                 factory(AuthorSlug::class)->create([
@@ -333,7 +332,7 @@ class DatabaseSeeder extends Seeder
                     'occupation_id' => $occupation->id,
                     'locale' => $locale,
                     'title' =>
-                        app(Faker::class)->name .
+                        faker($locale)->name .
                         ' Expert - ' .
                         strtoupper($locale),
                 ]);
