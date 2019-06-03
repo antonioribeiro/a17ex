@@ -15,7 +15,7 @@ global.Mix.manifest.path = function() {
 
 mix.js('resources/js/app.js', 'public/site/js')
     .sass('resources/sass/app.scss', 'public/site/css')
-    .purgeCss()
+    // .purgeCss() // this is purging too much code
     .version()
 
 /*
