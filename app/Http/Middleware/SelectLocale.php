@@ -13,8 +13,6 @@ class SelectLocale
      */
     private function getBrowserLocale($request): string
     {
-        dump($request->server('HTTP_ACCEPT_LANGUAGE'));
-
         return trim(substr($request->server('HTTP_ACCEPT_LANGUAGE'), 0, 2));
     }
 
@@ -36,7 +34,11 @@ class SelectLocale
             }
         }
 
+        dump(app()->getLocale());
+
         app()->setLocale($locale);
+
+        dump(app()->getLocale());
 
         return $next($request);
     }
