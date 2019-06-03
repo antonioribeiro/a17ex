@@ -39,7 +39,7 @@ class Author extends Model
 
     public function getShowUrlAttribute()
     {
-        return route('authors.show', [
+        return __route('authors.show', [
             'slug' => $this->getSlug(),
         ]);
     }

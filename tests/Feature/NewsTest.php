@@ -25,7 +25,7 @@ class NewsTest extends TestCase
      */
     public function testNewsPageIsAccessible()
     {
-        $response = $this->get('/');
+        $response = $this->get(__route('home'));
 
         $response->assertStatus(200);
     }
@@ -55,7 +55,7 @@ class NewsTest extends TestCase
 
     public function testArticlesAreRendering()
     {
-        $response = $this->get('/');
+        $response = $this->get(__route('home'));
 
         app(ArticleRepository::class)
             ->allPublishedArticles()
@@ -66,7 +66,7 @@ class NewsTest extends TestCase
 
     public function testTrendingIsRendering()
     {
-        $this->assertSeeTrending($this->get('/'));
+        $this->assertSeeTrending($this->get(__route('home')));
     }
 
     public function testCanShowAnArticle()

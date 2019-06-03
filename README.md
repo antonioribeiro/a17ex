@@ -33,6 +33,7 @@
 - What is this "image-wrap" on trending? Is this image supposed to be shown at some point?
 - Add some blocks to article seeding
 - Add a favicon
+- Set locale / Response cache per locale
 X Enable Google Analytics Stats
 X Author Bio
 X Author Page

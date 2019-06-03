@@ -30,3 +30,12 @@ if (!function_exists('faker')) {
         );
     }
 }
+
+if (!function_exists('__route')) {
+    function __route($name, $parameters = [], $absolute = true)
+    {
+        $parameters = $parameters + ['locale' => app()->getLocale()];
+
+        return route($name, $parameters, $absolute);
+    }
+}

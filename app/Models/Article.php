@@ -59,7 +59,7 @@ class Article extends Model implements Sortable
 
     public function getShowUrlAttribute()
     {
-        return route('news.show', [
+        return __route('news.show', [
             'slug' => $this->getSlug(),
         ]);
     }
