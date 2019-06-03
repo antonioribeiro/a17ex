@@ -25,7 +25,7 @@ class NewsTest extends TestCase
      */
     public function testNewsPageIsAccessible()
     {
-        $response = $this->get(__route('home'));
+        $response = $this->get(__route('home.with-locale'));
 
         $response->assertStatus(200);
     }
@@ -55,7 +55,7 @@ class NewsTest extends TestCase
 
     public function testArticlesAreRendering()
     {
-        $response = $this->get(__route('home'));
+        $response = $this->get(__route('home.with-locale'));
 
         app(ArticleRepository::class)
             ->allPublishedArticles()
@@ -66,7 +66,7 @@ class NewsTest extends TestCase
 
     public function testTrendingIsRendering()
     {
-        $this->assertSeeTrending($this->get(__route('home')));
+        $this->assertSeeTrending($this->get(__route('home.with-locale')));
     }
 
     public function testCanShowAnArticle()
