@@ -7,19 +7,17 @@
 -  Add the ability to translate content
 
 ## Presentation
-- Home page
+- News
 - Links
-- Article page
-- Author page
 - Trending
 - Ads
 - Share button
+- Article page
+- Author page
 - S3/Imgix
-- Admin / Twill
 - VueJS+API vs Full Dynamic Content Generation
 - public/site and the mix() and mix-manifest.json conundrum
 - Response cache and clear strategy
-- Compiling assets to production removes something
 - Share button (need help with design!)
 - Version (meta) and deploy script 
 - .button => cursor: pointer;
@@ -43,6 +41,7 @@
 - Add audit to Admin
 - What is this "image-wrap" on trending? Is this image supposed to be shown at some point?
 - Add a favicon
+- Understand PurgeCSS removing more code than expected
 X Add some blocks to article seeding
 X Set locale / Response cache per locale
 X Enable Google Analytics Stats
