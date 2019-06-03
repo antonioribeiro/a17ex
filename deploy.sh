@@ -1,4 +1,4 @@
-npm run dev
+npm run production
 git add public/*
 git commit -m "Compile to production"
 php artisan cache:clear
