@@ -34,11 +34,7 @@ class SelectLocale
             }
         }
 
-        dump(app()->getLocale());
-
         app()->setLocale($locale);
-
-        dump(app()->getLocale());
 
         return $next($request);
     }
