@@ -1,11 +1,11 @@
 # Area 17 Exercise
 
-## Build some sort of CMS, ideally using Laravel
-## Create CRUD process for NEWS items
-## Link the landing page to your CMS by integrating your statics with actual content (title, image, author)
-## Make the ad in the upper right editable in the CMS
-## Implement a detail page for news items that includes some sort of “block editor” capabilities to edit the body of the page
-## Add the ability to translate content
+##### Build some sort of CMS, ideally using Laravel
+##### Create CRUD process for NEWS items
+##### Link the landing page to your CMS by integrating your statics with actual content (title, image, author)
+##### Make the ad in the upper right editable in the CMS
+##### Implement a detail page for news items that includes some sort of “block editor” capabilities to edit the body of the page
+##### Add the ability to translate content
 
 ## Presentation
 - Admin / Twill
@@ -16,15 +16,18 @@
 - Compiling assets to production removes something
 - Share button (need help with design!)
 - Version (meta) and deploy script 
-- Scalability = FaaS / Lambda (wip) / Varnish (wip)
 - .button => cursor: pointer;
 - Maybe add a section to the posts?
 - Routes (response cache) per locale
 - Tests 
 - Larastan
 - Audit
+- Scalability = FaaS / Lambda (wip) / Varnish (wip)
 
 ## TODO
+- Article detail page design
+- Author Bio page design
+- Share modal design. We need to discus the whole implementation.
 - Validation / Configure Requests
 - Required data in Twill
 - Author/Article preview in Twill
@@ -33,8 +36,8 @@
 - Test Exceptions
 - Add audit to Admin
 - What is this "image-wrap" on trending? Is this image supposed to be shown at some point?
-- Add some blocks to article seeding
 - Add a favicon
+X Add some blocks to article seeding
 X Set locale / Response cache per locale
 X Enable Google Analytics Stats
 X Author Bio
