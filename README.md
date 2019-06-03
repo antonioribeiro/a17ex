@@ -19,6 +19,8 @@
 - Scalability = FaaS / Lambda (wip) / Varnish (wip)
 - .button => cursor: pointer;
 - Maybe add a section to the posts?
+- Routes (response cache) per locale
+- Tests 
 - Larastan
 - Audit
 
@@ -33,7 +35,7 @@
 - What is this "image-wrap" on trending? Is this image supposed to be shown at some point?
 - Add some blocks to article seeding
 - Add a favicon
-- Set locale / Response cache per locale
+X Set locale / Response cache per locale
 X Enable Google Analytics Stats
 X Author Bio
 X Author Page
