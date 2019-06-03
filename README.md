@@ -1,5 +1,4 @@
 # Area 17 Exercise
-
 -  Build some sort of CMS, ideally using Laravel
 -  Create CRUD process for NEWS items
 -  Link the landing page to your CMS by integrating your statics with actual content (title, image, author)
@@ -8,8 +7,15 @@
 -  Add the ability to translate content
 
 ## Presentation
+- Home page
+- Links
+- Article page
+- Author page
+- Trending
+- Ad
+- Share button
+- S3/Imgix
 - Admin / Twill
-- S3/Imgix  
 - VueJS+API vs Full Dynamic Content Generation
 - public/site and the mix() and mix-manifest.json conundrum
 - Response cache and clear strategy
