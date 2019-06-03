@@ -1,3 +1,8 @@
+/*
+ |--------------------------------------------------------------------------
+ | Laravel Mix
+ |--------------------------------------------------------------------------
+ */
 const mix = require('laravel-mix')
 
 require('laravel-mix-purgecss')
@@ -12,3 +17,15 @@ mix.js('resources/js/app.js', 'public/site/js')
     .sass('resources/sass/app.scss', 'public/site/css')
     .purgeCss()
     .version()
+
+/*
+ |--------------------------------------------------------------------------
+ | Plugins
+ |--------------------------------------------------------------------------
+ */
+
+const LiveReloadPlugin = require('webpack-livereload-plugin')
+
+mix.webpackConfig({
+    plugins: [new LiveReloadPlugin()],
+})

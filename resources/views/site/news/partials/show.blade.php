@@ -23,5 +23,7 @@
 </div>
 
 <div class='content'>
-    {!! $article->renderBlocks(false) !!}
+    <div class="blocks">
+        {!! $article->renderBlocks(false) !!}
+    </div>
 </div>

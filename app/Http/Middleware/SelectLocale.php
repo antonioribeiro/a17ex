@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Support;
+namespace App\Http\Middleware;
 
 use App;
 use Closure;
 
-class ChangeLocale
+class SelectLocale
 {
     /**
      * @param $request
@@ -13,6 +13,8 @@ class ChangeLocale
      */
     private function getBrowserLocale($request): string
     {
+        dump($request->server('HTTP_ACCEPT_LANGUAGE'));
+
         return trim(substr($request->server('HTTP_ACCEPT_LANGUAGE'), 0, 2));
     }
 

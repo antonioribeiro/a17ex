@@ -21,5 +21,6 @@
         </script>
 
         @include('layouts.partials.analytics')
+        @include('layouts.partials.livereload')
     </body>
 </html>
