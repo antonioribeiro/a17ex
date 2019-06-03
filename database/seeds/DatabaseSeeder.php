@@ -237,9 +237,7 @@ class DatabaseSeeder extends Seeder
                 factory(ArticleSlug::class)->create([
                     'article_id' => $model->id,
                     'locale' => $locale,
-                    'slug' => Str::slug(
-                        $article['title'] . ' (' . strtoupper($locale) . ')'
-                    ),
+                    'slug' => Str::slug($article['title']),
                 ]);
 
                 foreach (range(1, rand(2, 8)) as $counter) {
