@@ -1,11 +1,11 @@
 # Area 17 Exercise
 
-##### Build some sort of CMS, ideally using Laravel
-##### Create CRUD process for NEWS items
-##### Link the landing page to your CMS by integrating your statics with actual content (title, image, author)
-##### Make the ad in the upper right editable in the CMS
-##### Implement a detail page for news items that includes some sort of “block editor” capabilities to edit the body of the page
-##### Add the ability to translate content
+-  Build some sort of CMS, ideally using Laravel
+-  Create CRUD process for NEWS items
+-  Link the landing page to your CMS by integrating your statics with actual content (title, image, author)
+-  Make the ad in the upper right editable in the CMS
+-  Implement a detail page for news items that includes some sort of “block editor” capabilities to edit the body of the page
+-  Add the ability to translate content
 
 ## Presentation
 - Admin / Twill
